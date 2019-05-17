@@ -1,0 +1,184 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'PT Sans';
+}
+
+body{
+	font: 16px/1.4em 'PT Sans';
+}
+
+p,
+ul{
+	margin: 0 0 1.5em;
+}
+
+ul{
+	list-style: disc;
+	padding: 0 0 0 20px;
+}
+
+h1.logo{
+	background-color: #fff;
+	text-align: center;
+	font-size: 4em;
+	padding: 40px;
+	border-bottom: 1px solid #d6d6d6;
+}
+
+h1.logo a{
+	color: #e0001b;
+	text-decoration: none;
+	font-weight: heavy;
+	font-family: 'PT Sans';
+}
+
+article{
+	border-bottom: 1px solid #d6d6d6;
+	padding: 10px 20px 0 20px;
+	margin: 10px 0;
+}
+
+h2{
+	font-size: 32px;
+	line-height: 1.4em;
+	margin: 0 0 .4em;
+	font-weight: bold;
+}
+
+.main_menu{
+	list-style: none;
+	padding: 0;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+.main_menu li a{
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding: 0 10px;
+}
+
+.main_menu li a:hover,
+.main_menu li a:focus{
+	color: #1c1c1c;
+	background: #ccc;
+}
+
+.flex{
+	max-width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+header{
+	background: #2f82ba;
+	font-family: Arial;
+	color: #fff;
+	width: 100%;
+}
+
+footer{
+	font-style: italic;
+	text-align: center;
+	font-size: 14px;
+}
+
+input#menu{
+	display: none;
+}
+
+a{
+	/*color: #1D745A;*/
+	color: #e0001b;
+}
+
+
+
+/* mobile */
+@media only screen and (max-width: 768px){
+	nav{
+		order: 3;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
+
+	.main_menu{
+		display: none;
+		margin: 0;
+	}
+
+	label#menu{
+		display: block;
+		width: 100%;
+		/*background-color: #1c1c1c;*/
+		background-color: #2f82ba;
+		cursor: pointer;
+		color: #fff;
+		height: 35px;
+		line-height: 35px;
+		text-align: center;
+		cursor: pointer;
+		z-index: 2;
+	}
+
+	.line{
+		position: absolute;
+		right: 10px;
+		width: 20px;
+		height: 2px;
+		background: white;
+		z-index: 0;
+		transition: transform 1s;
+	}
+	
+	.first{
+		bottom: 10px;
+	}
+
+	.second{
+		bottom: 15px;
+	}
+	
+	.third{
+		bottom: 20px;
+	}
+
+	input#menu:checked ~ .main_menu{
+		display: flex;
+		flex-direction: column;
+		background-color: #2f82ba;
+		bottom: 40px;
+	}
+
+
+	.main_menu li{
+		/*border-bottom: 1px solid #383838;*/
+		border-bottom: 1px solid #d6d6d6;
+		height: 35px;
+		line-height: 35px;
+	}
+	footer{
+		margin-bottom: 35px;
+	}
+}
+
+/* desktop */
+@media only screen and (min-width: 768px){
+	label#menu,
+	.line
+	{
+		display: none;
+	}
+
+	.main_menu{
+		display: flex;
+		justify-content: space-evenly;
+		margin-bottom: 0;
+		line-height: 35px;
+	}
+}
